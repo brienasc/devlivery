@@ -1,0 +1,372 @@
+[
+    {
+      "estado": "AC",
+      "cidades": [
+        "Rio Branco",
+        "Cruzeiro do Sul",
+        "Sena Madureira",
+        "Tarauacá",
+        "Feijó",
+        "Xapuri",
+        "Brasiléia",
+        "Epitaciolândia",
+        "Senador Guiomard"
+      ]
+    },
+    {
+      "estado": "AL",
+      "cidades": [
+        "Maceió",
+        "Arapiraca",
+        "Coruripe",
+        "Palmeira dos Índios",
+        "Rio Largo",
+        "Murici",
+        "Penedo",
+        "Delmiro Gouveia",
+        "São Miguel dos Campos",
+        "Campo Alegre"
+      ]
+    },
+    {
+      "estado": "AP",
+      "cidades": [
+        "Macapá",
+        "Cutias",
+        "Santana",
+        "Porto Grande",
+        "Itubaul",
+        "Laranjal do Jari",
+        "Tartarugalzinho"
+        ]
+    },
+    {
+      "estado": "AM",
+      "cidades": [
+        "Manaus",
+        "Parintins",
+        "Itacoatiara",
+        "Manacapuru",
+        "Tabatinga",
+        "Coari",
+        "Tefé",
+        "Humaitá",
+        "Boca do Acre"
+      ]
+    },
+    {
+      "estado": "BA",
+      "cidades": [
+        "Salvador",
+        "Feira de Santana",
+        "Vitória da Conquista",
+        "Camaçari",
+        "Juazeiro",
+        "Ilhéus",
+        "Itabuna",
+        "Lauro de Freitas",
+        "Barreiras"
+      ]
+    },
+    {
+      "estado": "CE",
+      "cidades": [
+        "Fortaleza",
+        "Caucaia",
+        "Juazeiro do Norte",
+        "Maracanaú",
+        "Sobral",
+        "Crato",
+        "Iguatu",
+        "Itapipoca",
+        "Quixadá"
+      ]
+    },
+    {
+      "estado": "DF",
+      "cidades": [
+        "Brasília"
+      ]
+    },
+    {
+      "estado": "ES",
+      "cidades": [
+        "Vitória",
+        "Vila Velha",
+        "Serra",
+        "Cariacica",
+        "Linhares",
+        "Colatina",
+        "Guarapari",
+        "São Mateus",
+        "Aracruz"
+      ]
+    },
+    {
+      "estado": "GO",
+      "cidades": [
+        "Goiânia",
+        "Aparecida de Goiânia",
+        "Anápolis",
+        "Rio Verde",
+        "Luziânia",
+        "Jataí",
+        "Catalão",
+        "Gurupi",
+        "Itumbiara"
+      ]
+    },
+    {
+      "estado": "MA",
+      "cidades": [
+        "São Luís",
+        "Imperatriz",
+        "Caxias",
+        "Açailândia",
+        "Timon",
+        "Bacabal",
+        "Pedreiras",
+        "Codó",
+        "Rosário"
+      ]
+    },
+    {
+      "estado": "MT",
+      "cidades": [
+        "Cuiabá",
+        "Várzea Grande",
+        "Rondonópolis",
+        "Sinop",
+        "Sorriso",
+        "Lucas do Rio Verde",
+        "Tangará da Serra",
+        "Barra do Garças",
+        "Cáceres"
+      ]
+    },
+    {
+      "estado": "MS",
+      "cidades": [
+        "Campo Grande",
+        "Dourados",
+        "Três Lagoas",
+        "Corumbá",
+        "Ponta Porã",
+        "Aquidauana",
+        "Naviraí",
+        "Coxim",
+        "Paranaíba"
+      ]
+    },
+    {
+      "estado": "MG",
+      "cidades": [
+        "Belo Horizonte",
+        "Uberlândia",
+        "Contagem",
+        "Juiz de Fora",
+        "Betim",
+        "Montes Claros",
+        "Uberaba",
+        "Ipatinga",
+        "Governador Valadares"
+      ]
+    },
+    {
+      "estado": "PA",
+      "cidades": [
+        "Belém",
+        "Ananindeua",
+        "Santarém",
+        "Marabá",
+        "Castanhal",
+        "Parauapebas",
+        "Altamira",
+        "Bragança",
+        "Cametá"
+      ]
+    },
+    {
+      "estado": "PB",
+      "cidades": [
+        "João Pessoa",
+        "Campina Grande",
+        "Santa Rita",
+        "Patos",
+        "Bayeux",
+        "Cajazeiras",
+        "Sousa",
+        "Itaporanga",
+        "Mamanguape"
+      ]
+    },
+    {
+      "estado": "PR",
+      "cidades": [
+        "Curitiba",
+        "Londrina",
+        "Maringá",
+        "Ponta Grossa",
+        "Foz do Iguaçu",
+        "Cascavel",
+        "São José dos Pinhais",
+        "Guarapuava",
+        "Toledo"
+      ]
+    },
+    {
+      "estado": "PE",
+      "cidades": [
+        "Recife",
+        "Olinda",
+        "Jaboatão dos Guararapes",
+        "Caruaru",
+        "Petrolina",
+        "Cabo de Santo Agostinho",
+        "Garanhuns",
+        "Arcoverde",
+        "Ipojuca"
+      ]
+    },
+    {
+      "estado": "PI",
+      "cidades": [
+        "Teresina",
+        "Parnaíba",
+        "Picos",
+        "Floriano",
+        "Barras",
+        "Oeiras",
+        "Esperantina",
+        "São Raimundo Nonato",
+        "Piripiri"
+      ]
+    },
+    {
+      "estado": "RJ",
+      "cidades": [
+        "Rio de Janeiro",
+        "Niterói",
+        "Duque de Caxias",
+        "Nova Iguaçu",
+        "São Gonçalo",
+        "Campos dos Goytacazes",
+        "Petrópolis",
+        "Volta Redonda",
+        "Angra dos Reis"
+      ]
+    },
+    {
+      "estado": "RN",
+      "cidades": [
+        "Natal",
+        "Mossoró",
+        "Parnamirim",
+        "São Gonçalo do Amarante",
+        "Macau",
+        "Caicó",
+        "Açu",
+        "Pau dos Ferros",
+        "Currais Novos"
+      ]
+    },
+    {
+      "estado": "RS",
+      "cidades": [
+        "Porto Alegre",
+        "Caxias do Sul",
+        "Pelotas",
+        "Santa Maria",
+        "Passo Fundo",
+        "Gravataí",
+        "Canoas",
+        "São Leopoldo",
+        "Novo Hamburgo"
+      ]
+    },
+    {
+      "estado": "RO",
+      "cidades": [
+        "Porto Velho",
+        "Ji-Paraná",
+        "Ariquemes",
+        "Vilhena",
+        "Cacoal",
+        "Rolim de Moura",
+        "Buritis",
+        "Jaru",
+        "Guajará-Mirim"
+      ]
+    },
+    {
+      "estado": "RR",
+      "cidades": [
+        "Boa Vista",
+        "Rorainópolis",
+        "Caracaraí",
+        "Alto Alegre",
+        "Iracema",
+        "São João da Baliza",
+        "Normandia",
+        "Canta",
+        "Uiramutã"
+      ]
+    },
+    {
+      "estado": "SC",
+      "cidades": [
+        "Florianópolis",
+        "Joinville",
+        "Blumenau",
+        "São José",
+        "Itajaí",
+        "Chapecó",
+        "Criciúma",
+        "Lages",
+        "Cascavel"
+      ]
+    },
+    {
+      "estado": "SP",
+      "cidades": [
+        "São Paulo",
+        "Guarulhos",
+        "Campinas",
+        "São Bernardo do Campo",
+        "Santo André",
+        "Ribeirão Preto",
+        "Osasco",
+        "Sorocaba",
+        "Mauá"
+      ]
+    },
+    {
+      "estado": "SE",
+      "cidades": [
+        "Aracaju",
+        "Nossa Senhora do Socorro",
+        "Lagarto",
+        "Itabaiana",
+        "Estância",
+        "Propriá",
+        "Simão Dias",
+        "Tobias Barreto",
+        "Barra dos Coqueiros"
+      ]
+    },
+    {
+      "estado": "TO",
+      "cidades": [
+        "Palmas",
+        "Araguaína",
+        "Gurupi",
+        "Paraíso do Tocantins",
+        "Porto Nacional",
+        "Dianópolis",
+        "Miracema do Tocantins",
+        "Colinas do Tocantins",
+        "Augustinópolis"
+      ]
+    }
+  ]
+  
