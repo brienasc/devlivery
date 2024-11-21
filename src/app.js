@@ -1,19 +1,30 @@
-const express = require('express');
-const dotenv = require('dotenv');
+// src/app.js
 
-dotenv.config(); // Carrega as variáveis de ambiente do arquivo .env
+const express = require('express');
+const cors = require('cors');
+const sequelize = require('./config/database');
+const routes = require('./routes/index'); // Index com todas as rotas combinadas
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Porta definida no .env ou padrão 3000
+const PORT = process.env.PORT || 3000;
 
-// Rota simples para verificar se o servidor está rodando
-app.get('/', (req, res) => {
-  res.send('Servidor funcionando corretamente!');
-});
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-// Inicializa o servidor
+// Rotas
+app.use('/api', routes);
+
+// Conectar ao banco e sincronizar modelos
+sequelize.sync()
+  .then(() => {
+    console.log('Modelos sincronizados com o banco de dados.');
+  })
+  .catch((error) => {
+    console.error('Erro ao sincronizar os modelos:', error);
+  });
+
+// Iniciar o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
-
-module.exports = app;
