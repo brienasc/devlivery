@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "bio": "Desenvolvedor Full-Stack",
+        "avaliacao": 4.5
+    },
+
+    {
+        "id": 2,
+        "bio": "Desenvolvedor Front-end",
+        "avaliacao": 4.5
+    },
+
+    {
+        "id": 3,
+        "bio": "Desenvolvedor de Banco de Dados",
+        "avaliacao": 4.5
+    },
+
+    {
+        "id": 4,
+        "bio": "Desenvolvedor Front-end",
+        "avaliacao": 4.5
+    }
+]

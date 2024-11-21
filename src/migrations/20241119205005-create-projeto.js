@@ -24,7 +24,7 @@ module.exports = {
     id_empresa: {
         type: Sequelize.INTEGER,
         references: {
-            model: 'empresas',
+            model: 'empresa',
             key: 'id',
         },
         onDelete: 'CASCADE',

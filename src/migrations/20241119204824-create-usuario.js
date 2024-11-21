@@ -30,7 +30,7 @@ module.exports = {
     id_endereco: {
         type: Sequelize.INTEGER,
         references: {
-            model: 'enderecos',
+            model: 'endereco',
             key: 'id',
         },
         onDelete: 'SET NULL',

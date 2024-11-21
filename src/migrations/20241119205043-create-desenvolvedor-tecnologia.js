@@ -6,7 +6,7 @@ module.exports = {
       id_desenvolvedor: {
         type: Sequelize.INTEGER,
         references: {
-            model: 'desenvolvedores',
+            model: 'desenvolvedor',
             key: 'id',
         },
         onDelete: 'CASCADE',
@@ -15,7 +15,7 @@ module.exports = {
     id_tecnologia: {
         type: Sequelize.INTEGER,
         references: {
-            model: 'tecnologias',
+            model: 'tecnologia',
             key: 'id',
         },
         onDelete: 'CASCADE',

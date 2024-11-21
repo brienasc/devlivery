@@ -1,0 +1,19 @@
+[
+    { "nome": "HTML5" },
+    { "nome": "CSS3" },
+    { "nome": "JavaScript" },
+    { "nome": "TailwindCss" },
+    { "nome": "ReactJS" },
+    { "nome": "Python" },
+    { "nome": "Java" },
+    { "nome": "PHP" },
+    { "nome": "Node.js" },
+    { "nome": "Figma" },
+    { "nome": "Git" },
+    { "nome": "SQL" },
+    { "nome": "MariaDB" },
+    { "nome": "Oracle" },
+    { "nome": "MongoDB" },
+    { "nome": "MySQL" },
+    { "nome": "PostgreSQL" }
+]

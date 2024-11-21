@@ -1,0 +1,50 @@
+[
+    {
+      "id_desenvolvedor": 1,
+      "id_tecnologia": 3
+    },
+    {
+      "id_desenvolvedor": 1,
+      "id_tecnologia": 5
+    },
+    {
+    "id_desenvolvedor": 1,
+    "id_tecnologia": 11
+    },
+    {
+    "id_desenvolvedor": 2,
+    "id_tecnologia": 3
+    },
+    {
+    "id_desenvolvedor": 2,
+    "id_tecnologia": 5
+    },
+    {
+    "id_desenvolvedor": 2,
+    "id_tecnologia": 10
+    },
+    {
+    "id_desenvolvedor": 3,
+    "id_tecnologia": 6
+    },
+    {
+    "id_desenvolvedor": 3,
+    "id_tecnologia": 11
+    },
+    {
+    "id_desenvolvedor": 3,
+    "id_tecnologia": 12
+    },
+    {
+    "id_desenvolvedor": 4,
+    "id_tecnologia": 3
+    },
+    {
+    "id_desenvolvedor": 4,
+    "id_tecnologia": 4
+    },
+    {
+    "id_desenvolvedor": 4,
+    "id_tecnologia": 5
+    }
+  ]  

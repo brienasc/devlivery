@@ -1,0 +1,74 @@
+[
+    {
+    "username": "abraaoaraujo",
+    "nome": "Abraão Araújo",
+    "email": "abraao@hotmal.com",
+    "senha": "abraao@123",
+    "id_endereco": 10,
+    "tipo": "Desenvolvedor"
+    },
+
+    {
+    "username": "evandrofranca",
+    "nome": "Evandro França",
+    "email": "evandro@hotmal.com",
+    "senha": "evandro@123",
+    "id_endereco": 10,
+    "tipo": "Desenvolvedor"
+    },
+
+    {
+    "username": "gabriellanasc",
+    "nome": "Gabriella Nascimento",
+    "email": "gabriella@hotmal.com",
+    "senha": "gabriella@123",
+    "id_endereco": 12,
+    "tipo": "Desenvolvedor"
+    },
+
+    {
+    "username": "matheuspinheiro",
+    "nome": "Matheus Pinheiro",
+    "email": "matheus@hotmal.com",
+    "senha": "matheus@123",
+    "id_endereco": 10,
+    "tipo": "Desenvolvedor"
+    },
+
+    {
+    "username": "apple",
+    "nome": "Apple",
+    "email": "apple@hotmail.com",
+    "senha": "apple@123",
+    "id_endereco": 208,
+    "tipo": "Empresa"
+    },
+
+    {
+    "username": "samsung",
+    "nome": "Samsung",
+    "email": "samsung@hotmail.com",
+    "senha": "samsung@123",
+    "id_endereco": 208,
+    "tipo": "Empresa"
+    },
+
+    {
+    "username": "nvidia",
+    "nome": "NVIDIA",
+    "email": "nvidia@hotmail.com",
+    "senha": "nvidia@123",
+    "id_endereco": 154,
+    "tipo": "Empresa"
+    },
+
+    {
+    "username": "oracle",
+    "nome": "Oracle",
+    "email": "oracle@hotmail.com",
+    "senha": "oracle@123",
+    "id_endereco": 136,
+    "tipo": "Empresa"
+    }
+
+  ]

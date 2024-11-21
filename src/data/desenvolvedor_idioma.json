@@ -1,0 +1,42 @@
+[
+    {
+    "id_desenvolvedor": 1,
+    "id_idioma": 3
+    },
+
+    {
+    "id_desenvolvedor": 1,
+    "id_idioma": 1
+    },
+
+    {
+    "id_desenvolvedor": 2,
+    "id_idioma": 3
+    },
+
+    {
+    "id_desenvolvedor": 2,
+    "id_idioma": 4
+    },
+
+    {
+    "id_desenvolvedor": 3,
+    "id_idioma": 3
+    },
+
+    {
+    "id_desenvolvedor": 3,
+    "id_idioma": 1
+    },
+
+    {
+    "id_desenvolvedor": 4,
+    "id_idioma": 3
+    },
+
+    {
+    "id_desenvolvedor": 4,
+    "id_idioma": 2
+    }
+  ]
+  

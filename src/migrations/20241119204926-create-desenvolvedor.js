@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         allowNull: false,
         references: {
-            model: 'usuarios',
+            model: 'usuario',
             key: 'id',
         },
         onDelete: 'CASCADE',
