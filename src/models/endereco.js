@@ -1,12 +1,19 @@
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  const Endereco = sequelize.define('Endereco', {  // Nome do modelo como 'Endereco'
+  class Endereco extends Model {
+    static associate(models) {
+      // Defina as associações aqui, se necessário
+    }
+  }
+  Endereco.init({
     estado: DataTypes.STRING,
-    cidade: DataTypes.STRING,
+    cidade: DataTypes.STRING
   }, {
-    tableName: 'endereco'  // Caso a tabela tenha um nome específico no banco
+    sequelize,
+    modelName: 'Endereco',
+    tableName: 'endereco',
+    timestamps: true,
   });
-
   return Endereco;
 };

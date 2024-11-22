@@ -1,8 +1,11 @@
 const express = require('express');
+const idiomaController = require('../controllers/idiomaController');
 const router = express.Router();
 
-router.get('/test', (req, res) => {
-    res.send('Rota de idioma funcionando');
-});
+router.post('/', idiomaController.create);
+router.get('/', idiomaController.getAll);
+router.get('/:id', idiomaController.getById);
+router.put('/:id', idiomaController.update);
+router.delete('/:id', idiomaController.delete);
 
 module.exports = router;

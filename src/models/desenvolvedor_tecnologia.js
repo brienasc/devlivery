@@ -1,24 +1,33 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
-  class desenvolvedor_tecnologia extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+    class DesenvolvedorTecnologia extends Model {
+        static associate(models) {
+            DesenvolvedorTecnologia.belongsTo(models.Desenvolvedor, { foreignKey: 'id_desenvolvedor' });
+            DesenvolvedorTecnologia.belongsTo(models.Tecnologia, { foreignKey: 'id_tecnologia' });
+        }
     }
-  }
-  desenvolvedor_tecnologia.init({
-    id_desenvolvedor: DataTypes.INTEGER,
-    id_tecnologia: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'desenvolvedor_tecnologia',
-  });
-  return desenvolvedor_tecnologia;
+    DesenvolvedorTecnologia.init({
+        id_desenvolvedor: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+        },
+        id_tecnologia: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+        },
+        nivel_experiencia: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+    }, {
+        sequelize,
+        modelName: 'DesenvolvedorTecnologia',
+        tableName: 'desenvolvedor_tecnologia',
+        timestamps: true,
+    });
+    return DesenvolvedorTecnologia;
 };

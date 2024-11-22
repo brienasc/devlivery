@@ -18,13 +18,13 @@ const router = express.Router();
 
 router.use('/candidaturas', candidaturaRoutes);
 router.use('/desenvolvedores', desenvolvedorRoutes);
-router.use('/desenvolvedores/idiomas', desenvolvedorIdiomaRoutes);
-router.use('/desenvolvedores/tecnologias', desenvolvedorTecnologiaRoutes);
+//router.use('/desenvolvedores/idiomas', desenvolvedorIdiomaRoutes);
+//router.use('/desenvolvedores/tecnologias', desenvolvedorTecnologiaRoutes);
 router.use('/empresas', empresaRoutes);
 router.use('/enderecos', enderecoRoutes);
 router.use('/idiomas', idiomaRoutes);
 router.use('/projetos', projetoRoutes);
-router.use('/projetos/desenvolvedores', projetoDesenvolvedorRoutes);
+//router.use('/projetos/desenvolvedores', projetoDesenvolvedorRoutes);
 router.use('/tecnologias', tecnologiaRoutes);
 router.use('/usuarios', usuarioRoutes);
 

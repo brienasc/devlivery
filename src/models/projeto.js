@@ -1,30 +1,36 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
-  class projeto extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+  class Projeto extends Model {
     static associate(models) {
-      // define association here
+      Projeto.belongsTo(models.Empresa, { foreignKey: 'id_empresa' });
     }
   }
-  projeto.init({
-    titulo: DataTypes.STRING,
-    descricao: DataTypes.TEXT,
-    status: {
-      type: DataTypes.ENUM, 
-      values: ['aberto', 'em andamento', 'concluído'],
-      allowNull: false,
+
+  Projeto.init({
+    titulo: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    id_empresa: DataTypes.INTEGER
+    descricao: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    status: {
+      type: DataTypes.ENUM('aberto', 'em andamento', 'concluído'),
+      allowNull: false
+    },
+    id_empresa: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   }, {
     sequelize,
-    modelName: 'projeto',
+    modelName: 'Projeto',
+    tableName: 'projeto',
+    timestamps: true,
   });
-  return projeto;
+
+  return Projeto;
 };

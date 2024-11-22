@@ -1,8 +1,11 @@
 const express = require('express');
+const desenvolvedorController = require('../controllers/desenvolvedorController');
 const router = express.Router();
 
-router.get('/test', (req, res) => {
-    res.send('Rota de desenvolvedor funcionando');
-});
+router.post('/', desenvolvedorController.create);
+router.get('/', desenvolvedorController.getAll);
+router.get('/:id', desenvolvedorController.getById);
+router.put('/:id', desenvolvedorController.update);
+router.delete('/:id', desenvolvedorController.delete);
 
 module.exports = router;

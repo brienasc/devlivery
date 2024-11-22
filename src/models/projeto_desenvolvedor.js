@@ -1,26 +1,37 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
-  class projeto_desenvolvedor extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+    class ProjetoDesenvolvedor extends Model {
+        static associate(models) {
+            ProjetoDesenvolvedor.belongsTo(models.Projeto, { foreignKey: 'id_projeto' });
+            ProjetoDesenvolvedor.belongsTo(models.Desenvolvedor, { foreignKey: 'id_desenvolvedor' });
+        }
     }
-  }
-  projeto_desenvolvedor.init({
-    id_projeto: DataTypes.INTEGER,
-    id_desenvolvedor: DataTypes.INTEGER,
-    data_inicio: DataTypes.DATE,
-    data_fim: DataTypes.DATE
-  }, {
-    sequelize,
-    modelName: 'projeto_desenvolvedor',
-  });
-  return projeto_desenvolvedor;
+    ProjetoDesenvolvedor.init({
+        id_projeto: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+        },
+        id_desenvolvedor: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+        },
+        data_inicio: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        data_fim: {
+            type: DataTypes.DATE,
+            allowNull: true,
+        },
+    }, {
+        sequelize,
+        modelName: 'ProjetoDesenvolvedor',
+        tableName: 'projeto_desenvolvedor',
+        timestamps: true,
+    });
+    return ProjetoDesenvolvedor;
 };

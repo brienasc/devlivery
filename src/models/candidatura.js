@@ -1,30 +1,35 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
-  class candidatura extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+    class Candidatura extends Model {
+        static associate(models) {
+            Candidatura.belongsTo(models.Desenvolvedor, { foreignKey: 'id_desenvolvedor' });
+            Candidatura.belongsTo(models.Projeto, { foreignKey: 'id_projeto' });
+        }
     }
-  }
-  candidatura.init({
-    id_desenvolvedor: DataTypes.INTEGER,
-    id_projeto: DataTypes.INTEGER,
-    data_candidatura: DataTypes.DATE,
-    status: {
-      type: DataTypes.ENUM, 
-      values: ['pendente', 'aprovado', 'rejeitado'],
-      allowNull: false,
-    },
-  }, {
-    sequelize,
-    modelName: 'candidatura',
-  });
-  return candidatura;
+    Candidatura.init({
+        id_desenvolvedor: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        id_projeto: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        data_candidatura: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        status: {
+            type: DataTypes.ENUM('pendente', 'aceita', 'rejeitada'),
+            allowNull: false,
+        },
+    }, {
+        sequelize,
+        modelName: 'Candidatura',
+        tableName: 'candidatura',
+        timestamps: true,
+    });
+    return Candidatura;
 };
