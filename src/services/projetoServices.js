@@ -1,11 +1,10 @@
-// services/projetoServices.js
 const { Projeto, Tecnologia, Empresa } = require('../models');
 
 const projetoService = {
     async create(data) {
         const projeto = await Projeto.create(data);
         if (data.tecnologias) {
-            await projeto.setTecnologias(data.tecnologias); // Assume que data.tecnologias é um array de IDs
+            await projeto.setTecnologias(data.tecnologias);
         }
         return projeto;
     },

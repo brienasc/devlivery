@@ -1,4 +1,3 @@
-// services/desenvolvedorService.js
 const { Desenvolvedor, Tecnologia, Idioma, Candidatura, Projeto, Endereco } = require('../models');
 const bcrypt = require('bcrypt');
 

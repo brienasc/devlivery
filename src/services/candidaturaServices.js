@@ -1,4 +1,3 @@
-// services/candidaturaServices.js
 const { Candidatura, Desenvolvedor, Projeto } = require('../models');
 
 const candidaturaService = {
