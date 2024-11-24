@@ -2,14 +2,12 @@
     {
       "titulo": "Projeto de Desenvolvimento Web",
       "descricao": "Desenvolvimento de um sistema de e-commerce.",
-      "status": "aberto",
-      "id_empresa": 6
+      "id_empresa": 2
     },
 
     {
         "titulo": "Projeto de Banco de Dados",
         "descricao": "Modelagem de dados para aplicativo freelancer",
-        "status": "aberto",
-        "id_empresa": 8
+        "id_empresa": 4
       }
   ]  

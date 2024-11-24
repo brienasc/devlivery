@@ -1,26 +1,13 @@
 const { Endereco } = require('../models');
 
-const enderecoServices = {
-    async create(data) {
-        return await Endereco.create(data);
-    },
+const enderecoService = {
     async getAll() {
-        return await Endereco.findAll();
-    },
-    async getById(id) {
-        return await Endereco.findByPk(id);
-    },
-    async update(id, data) {
-        const endereco = await Endereco.findByPk(id);
-        if (!endereco) return null;
-        return await endereco.update(data);
-    },
-    async delete(id) {
-        const endereco = await Endereco.findByPk(id);
-        if (!endereco) return false;
-        await endereco.destroy();
-        return true;
+        try {
+            return await Endereco.findAll();
+        } catch (error) {
+            throw new Error('Erro ao buscar endereços.');
+        }
     }
 };
 
-module.exports = enderecoServices;
+module.exports = enderecoService;

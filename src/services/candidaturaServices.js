@@ -1,25 +1,29 @@
-const { Candidatura } = require('../models');
+// services/candidaturaServices.js
+const { Candidatura, Desenvolvedor, Projeto } = require('../models');
 
 const candidaturaService = {
     async create(data) {
         return await Candidatura.create(data);
     },
-    async getAll() {
-        return await Candidatura.findAll();
+
+    async getByProjetoId(projetoId) {
+        return await Candidatura.findAll({
+            where: { projetoId },
+            include: [Desenvolvedor]
+        });
     },
-    async getById(id) {
-        return await Candidatura.findByPk(id);
+
+    async getByDesenvolvedorId(desenvolvedorId) {
+        return await Candidatura.findAll({
+            where: { desenvolvedorId },
+            include: [Projeto]
+        });
     },
-    async update(id, data) {
+
+    async updateStatus(id, status) {
         const candidatura = await Candidatura.findByPk(id);
         if (!candidatura) return null;
-        return await candidatura.update(data);
-    },
-    async delete(id) {
-        const candidatura = await Candidatura.findByPk(id);
-        if (!candidatura) return false;
-        await candidatura.destroy();
-        return true;
+        return await candidatura.update({ status });
     }
 };
 

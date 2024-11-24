@@ -1,3 +1,4 @@
+// controllers/candidaturaController.js
 const candidaturaService = require('../services/candidaturaServices');
 
 const candidaturaController = {
@@ -9,37 +10,30 @@ const candidaturaController = {
             res.status(500).json({ message: error.message });
         }
     },
-    async getAll(req, res) {
+
+    async getByProjetoId(req, res) {
         try {
-            const candidaturas = await candidaturaService.getAll();
+            const candidaturas = await candidaturaService.getByProjetoId(req.params.projetoId);
             res.status(200).json(candidaturas);
         } catch (error) {
             res.status(500).json({ message: error.message });
         }
     },
-    async getById(req, res) {
+
+    async getByDesenvolvedorId(req, res) {
         try {
-            const candidatura = await candidaturaService.getById(req.params.id);
-            if (!candidatura) return res.status(404).json({ message: "Candidatura não encontrada" });
+            const candidaturas = await candidaturaService.getByDesenvolvedorId(req.params.desenvolvedorId);
+            res.status(200).json(candidaturas);
+        } catch (error) {
+            res.status(500).json({ message: error.message });
+        }
+    },
+
+    async updateStatus(req, res) {
+        try {
+            const candidatura = await candidaturaService.updateStatus(req.params.id, req.body.status);
+            if (!candidatura) return res.status(404).json({ message: 'Candidatura não encontrada' });
             res.status(200).json(candidatura);
-        } catch (error) {
-            res.status(500).json({ message: error.message });
-        }
-    },
-    async update(req, res) {
-        try {
-            const updatedCandidatura = await candidaturaService.update(req.params.id, req.body);
-            if (!updatedCandidatura) return res.status(404).json({ message: "Candidatura não encontrada" });
-            res.status(200).json(updatedCandidatura);
-        } catch (error) {
-            res.status(500).json({ message: error.message });
-        }
-    },
-    async delete(req, res) {
-        try {
-            const success = await candidaturaService.delete(req.params.id);
-            if (!success) return res.status(404).json({ message: "Candidatura não encontrada" });
-            res.status(204).end();
         } catch (error) {
             res.status(500).json({ message: error.message });
         }

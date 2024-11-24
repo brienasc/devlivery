@@ -1,25 +1,38 @@
 [
     {
-        "id": 1,
-        "bio": "Desenvolvedor Full-Stack",
-        "avaliacao": 4.5
-    },
+        "username": "abraaoaraujo",
+        "nome": "Abraão Araújo",
+        "email": "abraao@hotmal.com",
+        "senha": "abraao@123",
+        "id_endereco": 10,
+        "bio": "Desenvolvedor Full-Stack"
+        },
+    
+        {
+        "username": "evandrofranca",
+        "nome": "Evandro França",
+        "email": "evandro@hotmal.com",
+        "senha": "evandro@123",
+        "id_endereco": 10,
+        "bio": "Desenvolvedor Front-end"
+        },
+    
+        {
+        "username": "gabriellanasc",
+        "nome": "Gabriella Nascimento",
+        "email": "gabriella@hotmal.com",
+        "senha": "gabriella@123",
+        "id_endereco": 12,
+        "bio": "Desenvolvedor de Banco de Dados"
+        },
+    
+        {
+        "username": "matheuspinheiro",
+        "nome": "Matheus Pinheiro",
+        "email": "matheus@hotmal.com",
+        "senha": "matheus@123",
+        "id_endereco": 10,
+        "bio": "Desenvolvedor Front-end"
+        }
 
-    {
-        "id": 2,
-        "bio": "Desenvolvedor Front-end",
-        "avaliacao": 4.5
-    },
-
-    {
-        "id": 3,
-        "bio": "Desenvolvedor de Banco de Dados",
-        "avaliacao": 4.5
-    },
-
-    {
-        "id": 4,
-        "bio": "Desenvolvedor Front-end",
-        "avaliacao": 4.5
-    }
-]
+    ]

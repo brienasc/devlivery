@@ -1,41 +1,66 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('desenvolvedor', {
-      id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
+      id_desenvolvedor: { 
+        type: Sequelize.INTEGER, 
+        autoIncrement: true, 
+        primaryKey: true 
+      },
+      
+      username: { 
+        type: Sequelize.STRING, 
+        allowNull: false, 
+        unique: true 
+      },
+      
+      nome: { 
+        type: Sequelize.STRING, 
+        allowNull: false 
+      },
+      
+      email: { 
+        type: Sequelize.STRING, 
+        allowNull: false, 
+        unique: true 
+      },
+      
+      senha: { 
+        type: Sequelize.STRING, 
+        allowNull: false 
+      },
+      
+      id_endereco: { 
+        type: Sequelize.INTEGER, 
+        references: { 
+          model: 'endereco', 
+          key: 'id_endereco' } 
+      },
+      
+      bio: { 
+        type: Sequelize.TEXT 
+      },
+    
+      avaliacao: { 
+        type: Sequelize.FLOAT, 
+        defaultValue: 0 
+      },
+    
+      createdAt: { 
+        type: Sequelize.DATE, 
         allowNull: false,
-        references: {
-            model: 'usuario',
-            key: 'id',
-        },
-        onDelete: 'CASCADE',
-    },
-    bio: {
-        type: Sequelize.TEXT,
-        allowNull: true,
-    },
-    avaliacao: {
-        type: Sequelize.DECIMAL(3, 2),
-        allowNull: true,
-    },
-    feed_portifolio: {
-        type: Sequelize.TEXT,
-        allowNull: true,
-    },
-    createdAt: {
-        type: Sequelize.DATE,
-        allowNull: false,
-    },
-    updatedAt: {
-        type: Sequelize.DATE,
-        allowNull: false,
-    },
-});
-},
-async down(queryInterface) {
-await queryInterface.dropTable('desenvolvedor');
-},
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'), 
+      },
+
+      updatedAt: { 
+        type: Sequelize.DATE, 
+        allowNull: false ,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      }
+    });
+  },
+
+  down: async (queryInterface) => {
+    await queryInterface.dropTable('desenvolvedor');
+  }
 };

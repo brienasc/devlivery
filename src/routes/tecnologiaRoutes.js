@@ -1,11 +1,11 @@
+// routes/tecnologiaRoutes.js
 const express = require('express');
 const tecnologiaController = require('../controllers/tecnologiaController');
 const router = express.Router();
 
-router.post('/', tecnologiaController.create);
-router.get('/', tecnologiaController.getAll);
-router.get('/:id', tecnologiaController.getById);
-router.put('/:id', tecnologiaController.update);
-router.delete('/:id', tecnologiaController.delete);
+router.get('/', tecnologiaController.list);
+router.get('/filter/:technologyId', tecnologiaController.filterByTechnology);
+router.post('/add-to-developer', tecnologiaController.addToDeveloper);
+router.post('/add-to-project', tecnologiaController.addToProject);
 
 module.exports = router;

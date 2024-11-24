@@ -1,25 +1,18 @@
-const { Idioma } = require('../models');
+// services/idiomaServices.js
+const { Idioma, Desenvolvedor } = require('../models');
 
 const idiomaService = {
-    async create(data) {
-        return await Idioma.create(data);
-    },
+    // Get all predefined languages
     async getAll() {
         return await Idioma.findAll();
     },
-    async getById(id) {
-        return await Idioma.findByPk(id);
-    },
-    async update(id, data) {
-        const idioma = await Idioma.findByPk(id);
-        if (!idioma) return null;
-        return await idioma.update(data);
-    },
-    async delete(id) {
-        const idioma = await Idioma.findByPk(id);
-        if (!idioma) return false;
-        await idioma.destroy();
-        return true;
+
+    // Add language to developer profile
+    async addToDeveloper(developerId, languageId) {
+        const developer = await Desenvolvedor.findByPk(developerId);
+        if (!developer) throw new Error('Desenvolvedor não encontrado');
+        await developer.addIdioma(languageId);
+        return { message: 'Idioma adicionado ao desenvolvedor' };
     }
 };
 

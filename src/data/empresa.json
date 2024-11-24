@@ -1,21 +1,37 @@
 [
-    {
-        "id": 5,
-        "telefone": "1112345678"
+{
+    "username": "apple",
+    "nome": "Apple",
+    "email": "apple@hotmail.com",
+    "senha": "apple@123",
+    "id_endereco": 208,
+    "telefone": 1111111111
     },
 
     {
-        "id": 6,
-        "telefone": "1191011121"
+    "username": "samsung",
+    "nome": "Samsung",
+    "email": "samsung@hotmail.com",
+    "senha": "samsung@123",
+    "id_endereco": 208,
+    "telefone": 1111111111
     },
 
     {
-        "id": 7,
-        "telefone": "1131415161"
+    "username": "nvidia",
+    "nome": "NVIDIA",
+    "email": "nvidia@hotmail.com",
+    "senha": "nvidia@123",
+    "id_endereco": 154,
+    "telefone": 1111111111
     },
 
     {
-        "id": 8,
-        "telefone": "1171819202"
+    "username": "oracle",
+    "nome": "Oracle",
+    "email": "oracle@hotmail.com",
+    "senha": "oracle@123",
+    "id_endereco": 136,
+    "telefone": 1111111111
     }
 ]

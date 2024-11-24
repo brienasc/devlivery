@@ -1,26 +1,71 @@
-const { Empresa } = require('../models');
+const { Empresa, Projeto, Candidatura, Desenvolvedor, Endereco } = require('../models');
+const bcrypt = require('bcrypt');
 
-const empresaServices = {
-    async create(data) {
+const empresaService = {
+    async register(data) {
+        data.senha = await bcrypt.hash(data.senha, 10);
         return await Empresa.create(data);
     },
-    async getAll() {
-        return await Empresa.findAll();
+
+    async login(email, senha) {
+        const empresa = await Empresa.findOne({ where: { email } });
+        if (!empresa || !(await bcrypt.compare(senha, empresa.senha))) {
+            return null;
+        }
+        return empresa;
     },
-    async getById(id) {
-        return await Empresa.findByPk(id);
-    },
-    async update(id, data) {
+
+    async updateProfile(id, data) {
         const empresa = await Empresa.findByPk(id);
         if (!empresa) return null;
         return await empresa.update(data);
     },
-    async delete(id) {
+
+    async changePassword(id, senhaAtual, novaSenha) {
         const empresa = await Empresa.findByPk(id);
-        if (!empresa) return false;
-        await empresa.destroy();
+        if (!empresa || !(await bcrypt.compare(senhaAtual, empresa.senha))) {
+            return false;
+        }
+        empresa.senha = await bcrypt.hash(novaSenha, 10);
+        await empresa.save();
         return true;
+    },
+
+    async getProfile(id) {
+        return await Empresa.findByPk(id, {
+            include: [
+                { model: Projeto },
+                { model: Endereco, attributes: ['cidade', 'estado' ] }
+            ]
+        });
+    },
+
+    async updateProfilePicture(id, fotoPerfil) {
+        const empresa = await Empresa.findByPk(id);
+        if (!empresa) return null;
+        empresa.foto_perfil = fotoPerfil;
+        await empresa.save();
+        return empresa;
+    },
+
+    async createProject(idEmpresa, projectData) {
+        return await Projeto.create({ ...projectData, id_empresa: idEmpresa });
+    },
+    
+    async getCandidatesByProject(idProjeto) {
+        return await Candidatura.findAll({
+            where: { id_projeto: idProjeto },
+            include: [{ model: Desenvolvedor }]
+        });
+    },
+    
+    async updateCandidatureStatus(idCandidatura, status) {
+        const candidatura = await Candidatura.findByPk(idCandidatura);
+        if (!candidatura) return null;
+        candidatura.status = status;
+        await candidatura.save();
+        return candidatura;
     }
 };
 
-module.exports = empresaServices;
+module.exports = empresaService;

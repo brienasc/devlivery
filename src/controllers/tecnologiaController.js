@@ -1,45 +1,41 @@
-const tecnologiaService = require('../services/tecnologiaServices');
+const tecnologiaServices = require('../services/tecnologiaServices');
 
 const tecnologiaController = {
-    async create(req, res) {
+    async list(req, res) {
         try {
-            const tecnologia = await tecnologiaService.create(req.body);
-            res.status(201).json(tecnologia);
-        } catch (error) {
-            res.status(500).json({ message: error.message });
-        }
-    },
-    async getAll(req, res) {
-        try {
-            const tecnologias = await tecnologiaService.getAll();
+            const tecnologias = await tecnologiaServices.getAll();
             res.status(200).json(tecnologias);
         } catch (error) {
             res.status(500).json({ message: error.message });
         }
     },
-    async getById(req, res) {
+
+    async addToDeveloper(req, res) {
         try {
-            const tecnologia = await tecnologiaService.getById(req.params.id);
-            if (!tecnologia) return res.status(404).json({ message: "Tecnologia não encontrada" });
-            res.status(200).json(tecnologia);
+            const { developerId, technologyId } = req.body;
+            const result = await tecnologiaServices.addToDeveloper(developerId, technologyId);
+            res.status(200).json(result);
         } catch (error) {
             res.status(500).json({ message: error.message });
         }
     },
-    async update(req, res) {
+
+    async addToProject(req, res) {
         try {
-            const updatedTecnologia = await tecnologiaService.update(req.params.id, req.body);
-            if (!updatedTecnologia) return res.status(404).json({ message: "Tecnologia não encontrada" });
-            res.status(200).json(updatedTecnologia);
+            const { projectId, technologyId } = req.body;
+            const result = await tecnologiaServices.addToProject(projectId, technologyId);
+            res.status(200).json(result);
         } catch (error) {
             res.status(500).json({ message: error.message });
         }
     },
-    async delete(req, res) {
+
+    //Filtrar desenvolvedores por tecnologia
+    async filterByTechnology(req, res) {
         try {
-            const success = await tecnologiaService.delete(req.params.id);
-            if (!success) return res.status(404).json({ message: "Tecnologia não encontrada" });
-            res.status(204).end();
+            const { technologyId } = req.params;
+            const developers = await tecnologiaServices.findDevelopersByTechnology(technologyId);
+            res.status(200).json(developers);
         } catch (error) {
             res.status(500).json({ message: error.message });
         }

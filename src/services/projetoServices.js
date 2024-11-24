@@ -1,26 +1,38 @@
-const { Projeto } = require('../models');
+// services/projetoServices.js
+const { Projeto, Tecnologia, Empresa } = require('../models');
 
-const projetoServices = {
+const projetoService = {
     async create(data) {
-        return await Projeto.create(data);
+        const projeto = await Projeto.create(data);
+        if (data.tecnologias) {
+            await projeto.setTecnologias(data.tecnologias); // Assume que data.tecnologias é um array de IDs
+        }
+        return projeto;
     },
+
     async getAll() {
-        return await Projeto.findAll();
+        return await Projeto.findAll({
+            where: { status: 'aberto' },
+            include: [Tecnologia, Empresa]
+        });
     },
+
     async getById(id) {
-        return await Projeto.findByPk(id);
+        return await Projeto.findByPk(id, { include: [Tecnologia, Empresa] });
     },
-    async update(id, data) {
+
+    async getByEmpresaId(empresaId) {
+        return await Projeto.findAll({
+            where: { empresaId },
+            include: [Tecnologia]
+        });
+    },
+
+    async updateStatus(id, status) {
         const projeto = await Projeto.findByPk(id);
         if (!projeto) return null;
-        return await projeto.update(data);
-    },
-    async delete(id) {
-        const projeto = await Projeto.findByPk(id);
-        if (!projeto) return false;
-        await projeto.destroy();
-        return true;
+        return await projeto.update({ status });
     }
 };
 
-module.exports = projetoServices;
+module.exports = projetoService;
