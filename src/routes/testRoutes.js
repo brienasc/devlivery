@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Usuario } = require('../models'); // Altere para um modelo existente
+const { Usuario } = require('../models');
 
 router.get('/test', async (req, res) => {
   try {

@@ -6,16 +6,16 @@ const candidaturaService = {
         return await Candidatura.create(data);
     },
 
-    async getByProjetoId(projetoId) {
+    async getByProjetoId(id_projeto) {
         return await Candidatura.findAll({
-            where: { projetoId },
+            where: { id_projeto },
             include: [Desenvolvedor]
         });
     },
 
-    async getByDesenvolvedorId(desenvolvedorId) {
+    async getByDesenvolvedorId(id_desenvolvedor) {
         return await Candidatura.findAll({
-            where: { desenvolvedorId },
+            where: { id_desenvolvedor },
             include: [Projeto]
         });
     },

@@ -51,14 +51,14 @@ const desenvolvedorService = {
     async getAvailableProjects() {
         return await Projeto.findAll({ where: { status: 'aberto' } });
     },
-    async getAppliedProjects(idDesenvolvedor) {
+    async getAppliedProjects(id_desenvolvedor) {
         return await Candidatura.findAll({
-            where: { id_desenvolvedor: idDesenvolvedor },
+            where: { id_desenvolvedor },
             include: [{ model: Projeto }]
         });
     },
-    async applyForProject(idDesenvolvedor, idProjeto) {
-        return await Candidatura.create({ id_desenvolvedor: idDesenvolvedor, id_projeto: idProjeto, status: 'pendente' });
+    async applyForProject(id_desenvolvedor, id_projeto) {
+        return await Candidatura.create({ id_desenvolvedor, id_projeto, status: 'pendente' });
     }
 };
 

@@ -7,27 +7,19 @@ const tecnologiaService = {
     },
 
     // Add technology to developer profile
-    async addToDeveloper(developerId, technologyId) {
-        const developer = await Desenvolvedor.findByPk(developerId);
+    async addToDeveloper(id_desenvolvedor, id_tecnologia) {
+        const developer = await Desenvolvedor.findByPk(id_desenvolvedor);
         if (!developer) throw new Error('Desenvolvedor não encontrado');
-        await developer.addTecnologia(technologyId);
+        await developer.addTecnologia(id_tecnologia);
         return { message: 'Tecnologia adicionada ao desenvolvedor' };
     },
 
-    // Add technology to project
-    async addToProject(projectId, technologyId) {
-        const project = await Projeto.findByPk(projectId);
-        if (!project) throw new Error('Projeto não encontrado');
-        await project.addTecnologia(technologyId);
-        return { message: 'Tecnologia adicionada ao projeto' };
-    },
-
     // Find developers by technology
-    async findDevelopersByTechnology(technologyId) {
+    async findDevelopersByTechnology(id_tecnologia) {
         const developers = await Desenvolvedor.findAll({
             include: {
                 model: Tecnologia,
-                where: { id: technologyId },
+                where: { id: id_tecnologia },
                 through: { attributes: [] }
             }
         });

@@ -40,6 +40,11 @@ module.exports = {
       telefone: { 
       type: Sequelize.STRING 
       },
+
+      foto_perfil: { 
+        type: Sequelize.STRING, 
+        allowNull: true 
+      },
     
       createdAt: { 
       type: Sequelize.DATE, 

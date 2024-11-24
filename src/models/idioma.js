@@ -1,4 +1,3 @@
-// src/models/idioma.js
 'use strict';
 const { Model } = require('sequelize');
 
@@ -14,6 +13,12 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     Idioma.init({
+        id_idioma: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+        },
+
         nome: {
             type: DataTypes.STRING,
             unique: true,

@@ -1,4 +1,3 @@
-// src/models/projeto.js
 'use strict';
 const { Model } = require('sequelize');
 
@@ -6,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   class Projeto extends Model {
     static associate(models) {
       Projeto.belongsTo(models.Empresa, { foreignKey: 'id_empresa', as: 'empresa' });
-      Projeto.belongsToMany(models.Desenvolvedor, { through: 'projeto_desenvolvedor', as: 'desenvolvedores', foreignKey: 'id_projeto' });
+      Projeto.belongsToMany(models.Desenvolvedor, { through: 'projeto_desenvolvedor', as: 'desenvolvedor', foreignKey: 'id_projeto' });
       Projeto.hasMany(models.Candidatura, { foreignKey: 'id_projeto', as: 'candidatura' });
     }
   }
@@ -30,14 +29,15 @@ module.exports = (sequelize, DataTypes) => {
 
     status: {
       type: DataTypes.ENUM('aberto', 'em andamento', 'concluído'),
-      allowNull: false
+      allowNull: false,
+      defaultValue: 'aberto'
     },
     
     id_empresa: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Empresa', // Nome da tabela de Empresa
+        model: 'Empresa',
         key: 'id_empresa',
     },
     }

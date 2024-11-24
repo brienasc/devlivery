@@ -1,4 +1,3 @@
-// src/models/tecnologia.js
 'use strict';
 const { Model } = require('sequelize');
 

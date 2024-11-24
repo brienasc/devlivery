@@ -21,9 +21,9 @@ const projetoService = {
         return await Projeto.findByPk(id, { include: [Tecnologia, Empresa] });
     },
 
-    async getByEmpresaId(empresaId) {
+    async getByEmpresaId(id_empresa) {
         return await Projeto.findAll({
-            where: { empresaId },
+            where: { id_empresa },
             include: [Tecnologia]
         });
     },

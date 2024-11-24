@@ -4,8 +4,8 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class Candidatura extends Model {
         static associate(models) {
-            Candidatura.belongsTo(models.Desenvolvedor, { foreignKey: 'id_desenvolvedor', as: 'desenvolvedores' });
-            Candidatura.belongsTo(models.Projeto, { foreignKey: 'id_projeto', as: 'projetos' });
+            Candidatura.belongsTo(models.Desenvolvedor, { foreignKey: 'id_desenvolvedor', as: 'desenvolvedor' });
+            Candidatura.belongsTo(models.Projeto, { foreignKey: 'id_projeto', as: 'projeto' });
         }
     }
     
@@ -32,11 +32,6 @@ module.exports = (sequelize, DataTypes) => {
                 model: 'projeto',
                 key: 'id_projeto',
             }
-        },
-    
-        data_candidatura: {
-            type: DataTypes.DATE,
-            allowNull: false,
         },
         
         status: {

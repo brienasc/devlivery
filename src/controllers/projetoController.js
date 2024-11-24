@@ -1,6 +1,7 @@
 const projetoServices = require('../services/projetoServices');
 
 const projetoController = {
+    //Criar
     async create(req, res) {
         try {
             const projeto = await projetoServices.create(req.body);
@@ -10,6 +11,7 @@ const projetoController = {
         }
     },
 
+    //Listar todos
     async getAll(req, res) {
         try {
             const projetos = await projetoServices.getAll();
@@ -19,6 +21,7 @@ const projetoController = {
         }
     },
 
+    //Mostrar projeto
     async getById(req, res) {
         try {
             const projeto = await projetoServices.getById(req.params.id);
@@ -29,6 +32,7 @@ const projetoController = {
         }
     },
 
+    //Visualizar projetos por empresa
     async getByEmpresaId(req, res) {
         try {
             const projetos = await projetoServices.getByEmpresaId(req.params.empresaId);
@@ -38,6 +42,7 @@ const projetoController = {
         }
     },
 
+    //Atualizar status
     async updateStatus(req, res) {
         try {
             const projeto = await projetoServices.updateStatus(req.params.id, req.body.status);

@@ -1,4 +1,3 @@
-// controllers/candidaturaController.js
 const candidaturaService = require('../services/candidaturaServices');
 
 const candidaturaController = {
@@ -22,7 +21,7 @@ const candidaturaController = {
 
     async getByDesenvolvedorId(req, res) {
         try {
-            const candidaturas = await candidaturaService.getByDesenvolvedorId(req.params.desenvolvedorId);
+            const candidaturas = await candidaturaService.getByDesenvolvedorId(req.params.id_desenvolvedor);
             res.status(200).json(candidaturas);
         } catch (error) {
             res.status(500).json({ message: error.message });

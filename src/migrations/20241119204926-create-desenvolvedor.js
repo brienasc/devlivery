@@ -45,6 +45,11 @@ module.exports = {
         type: Sequelize.FLOAT, 
         defaultValue: 0 
       },
+
+      foto_perfil: { 
+        type: Sequelize.STRING, 
+        allowNull: true 
+      },
     
       createdAt: { 
         type: Sequelize.DATE, 

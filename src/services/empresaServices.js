@@ -52,9 +52,9 @@ const empresaService = {
         return await Projeto.create({ ...projectData, id_empresa: idEmpresa });
     },
     
-    async getCandidatesByProject(idProjeto) {
+    async getCandidatesByProject(id_projeto) {
         return await Candidatura.findAll({
-            where: { id_projeto: idProjeto },
+            where: { id_projeto },
             include: [{ model: Desenvolvedor }]
         });
     },

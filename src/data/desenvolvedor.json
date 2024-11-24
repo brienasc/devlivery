@@ -2,7 +2,7 @@
     {
         "username": "abraaoaraujo",
         "nome": "Abraão Araújo",
-        "email": "abraao@hotmal.com",
+        "email": "abraao@hotmail.com",
         "senha": "abraao@123",
         "id_endereco": 10,
         "bio": "Desenvolvedor Full-Stack"
@@ -11,7 +11,7 @@
         {
         "username": "evandrofranca",
         "nome": "Evandro França",
-        "email": "evandro@hotmal.com",
+        "email": "evandro@hotmail.com",
         "senha": "evandro@123",
         "id_endereco": 10,
         "bio": "Desenvolvedor Front-end"
@@ -20,7 +20,7 @@
         {
         "username": "gabriellanasc",
         "nome": "Gabriella Nascimento",
-        "email": "gabriella@hotmal.com",
+        "email": "gabriella@hotmail.com",
         "senha": "gabriella@123",
         "id_endereco": 12,
         "bio": "Desenvolvedor de Banco de Dados"
@@ -29,7 +29,7 @@
         {
         "username": "matheuspinheiro",
         "nome": "Matheus Pinheiro",
-        "email": "matheus@hotmal.com",
+        "email": "matheus@hotmail.com",
         "senha": "matheus@123",
         "id_endereco": 10,
         "bio": "Desenvolvedor Front-end"
