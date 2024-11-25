@@ -88,7 +88,7 @@ const empresaController = {
     //Visualizar candidatos ao projeto
     async getCandidatesByProject(req, res) {
         try {
-            const candidates = await empresaServices.getCandidatesByProject(req.params.id_projeto);
+            const candidates = await empresaServices.getCandidatesByProject(req.params.idProjeto);
             res.status(200).json(candidates);
         } catch (error) {
             res.status(500).json({ message: error.message });
