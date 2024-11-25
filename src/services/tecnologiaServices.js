@@ -12,13 +12,14 @@ const tecnologiaService = {
         return { message: 'Tecnologia adicionada ao desenvolvedor' };
     },
 
-    async findDevelopersByTechnology(id_tecnologia) {
+    async findDevelopersByTechnology(technologyId) {
         const developers = await Desenvolvedor.findAll({
-            include: {
-                model: Tecnologia,
-                where: { id: id_tecnologia },
-                through: { attributes: [] }
-            }
+            include: [{
+            model: Tecnologia, as: 'tecnologia',                
+            where: { id_tecnologia: technologyId },
+            attributes: ['id_tecnologia', 'nome'],
+            through: { attributes: [] }
+            }]
         });
         return developers;
     }

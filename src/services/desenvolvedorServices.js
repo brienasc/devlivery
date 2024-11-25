@@ -53,7 +53,7 @@ const desenvolvedorService = {
     async getAppliedProjects(id_desenvolvedor) {
         return await Candidatura.findAll({
             where: { id_desenvolvedor },
-            include: [{ model: Projeto }]
+            include: [{ model: Projeto, as: 'projeto' }]
         });
     },
     async applyForProject(id_desenvolvedor, id_projeto) {

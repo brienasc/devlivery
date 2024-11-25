@@ -21,7 +21,7 @@ const candidaturaController = {
 
     async getByDesenvolvedorId(req, res) {
         try {
-            const candidaturas = await candidaturaService.getByDesenvolvedorId(req.params.id_desenvolvedor);
+            const candidaturas = await candidaturaService.getByDesenvolvedorId(req.params.desenvolvedorId);
             res.status(200).json(candidaturas);
         } catch (error) {
             res.status(500).json({ message: error.message });

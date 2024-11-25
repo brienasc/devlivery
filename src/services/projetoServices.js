@@ -11,19 +11,19 @@ const projetoService = {
 
     async getAll() {
         return await Projeto.findAll({
-            where: { status: 'aberto' },
-            include: [Tecnologia, Empresa]
+            include: [{ model: Empresa, as: 'empresa' }],
+            where: { status: 'aberto' }
         });
     },
 
     async getById(id) {
-        return await Projeto.findByPk(id, { include: [Tecnologia, Empresa] });
+        return await Projeto.findByPk(id, { include: [{ model: Empresa, as: 'empresa'}] });
     },
 
     async getByEmpresaId(id_empresa) {
         return await Projeto.findAll({
             where: { id_empresa },
-            include: [Tecnologia]
+            include: [{ model: Empresa, as: 'empresa'}]
         });
     },
 

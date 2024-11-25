@@ -25,8 +25,8 @@ const tecnologiaController = {
     //Filtrar desenvolvedores por tecnologia
     async filterByTechnology(req, res) {
         try {
-            const { id_tecnologia } = req.params;
-            const developers = await tecnologiaServices.findDevelopersByTechnology(id_tecnologia);
+            const { technologyId } = req.params;
+            const developers = await tecnologiaServices.findDevelopersByTechnology(technologyId);
             res.status(200).json(developers);
         } catch (error) {
             res.status(500).json({ message: error.message });

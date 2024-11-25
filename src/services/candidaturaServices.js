@@ -8,14 +8,14 @@ const candidaturaService = {
     async getByProjetoId(id_projeto) {
         return await Candidatura.findAll({
             where: { id_projeto },
-            include: [Desenvolvedor]
+            include: [{model: Desenvolvedor, as: 'desenvolvedor'}]
         });
     },
 
     async getByDesenvolvedorId(id_desenvolvedor) {
         return await Candidatura.findAll({
             where: { id_desenvolvedor },
-            include: [Projeto]
+            include: [{model: Projeto, as: 'projeto'}]
         });
     },
 
